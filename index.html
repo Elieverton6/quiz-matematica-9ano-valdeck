@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz de Matemática 1º ano - Prof Valdeck Francisco</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="stage">
+
+    <header>
+      <div class="brand-group">
+
+        <div class="title-wrap">
+          <h1>CONVIVÊNCIA ESCOLAR 2026</h1>
+
+          <p>Prof. Valdeck Francisco</p>
+
+          <p>Escola Erundina Negreiros — GRE Recife Norte</p>
+        </div>
+
+      </div>
+    </header>
+
+    <div id="quiz-box" class="slide-card">
+
+      <div class="progress">
+        <div class="bar" id="progress-bar"></div>
+      </div>
+
+      <h3 id="question-counter"></h3>
+
+      <h2 id="question"></h2>
+
+      <ul id="options" class="bullets"></ul>
+
+      <button id="next-btn" class="btn">
+        Próxima
+      </button>
+
+    </div>
+
+
+    <div id="result-box" class="slide-card hidden">
+
+      <h2>🎉 Resultado Final</h2>
+
+      <p class="result-score">
+        Você acertou
+        <strong><span id="score"></span></strong> de
+        <strong><span id="total"></span></strong> questões
+      </p>
+
+      <div class="result-progress">
+        <div id="result-bar"></div>
+      </div>
+
+      <p id="result-percent"></p>
+      <p id="result-message"></p>
+
+      <button id="restart-btn" class="btn secondary">
+        Jogar Novamente
+      </button>
+
+    </div>
+
+
+    <!-- <footer>
+      Professor Valdeck Francisco — Material Didático
+    </footer> -->
+
+  </div>
+
+  <script>
+    const questions = [
+      {question:"Atitudes que atrapalham o andamento da aula, como conversar excessivamente ou não cumprir orientações do professor. Significa um ato de:", options:["Violência","Indisciplina","Bullying","Transgressão"], answer:1},
+      {question:"Agressões físicas ou psicológicas que causam dano ou sofrimento a outra pessoa. Significa um ato de:", options:["Indisciplina","Incivilidade","Violência","Transgressão"], answer:2},
+      {question:"Falta de respeito ou atitudes grosseiras que ferem a boa convivência entre as pessoas. Significa um ato de:", options:["Indisciplina","Incivilidade","Violência","Transgressão"], answer:1},
+      {question:"Ato de desrespeitar regras ou normas estabelecidas pela escola. Significa um ato de:", options:["Incivilidade","Violência","Transgressão","Bullying/Cyberbullying"], answer:2},
+      {question:"Comportamentos repetitivos de humilhação ou intimidação, podendo ocorrer também nas redes sociais. Significa um ato de:", options:["Indisciplina","Violência","Transgressão","Bullying/Cyberbullying"], answer:3},
+      {question:"Durante a explicação do professor, alguns alunos conversam alto, mexem no celular e não realizam as atividades solicitadas.", options:["Violência","Indisciplina","Bullying","Transgressão"], answer:1},
+      {question:"No intervalo, um aluno chama o colega por apelidos desagradáveis e faz comentários desrespeitosos na frente de outros estudantes.", options:["Incivilidade","Violência","Indisciplina","Transgressão"], answer:0},
+      {question:"Dois alunos começam uma discussão no pátio da escola e acabam trocando empurrões e socos.", options:["Incivilidade","Bullying","Violência","Indisciplina"], answer:2},
+      {question:"Um estudante sai da sala de aula sem autorização do professor e circula pela escola desrespeitando as regras.", options:["Bullying","Transgressão","Violência","Incivilidade"], answer:1},
+      {question:"Um grupo cria um perfil em rede social para publicar mensagens ridicularizando um colega.", options:["Incivilidade","Indisciplina","Bullying/Cyberbullying","Transgressão"], answer:2},
+      {question:"Sala com muito ruído, alunos em pé e gritando, ninguém escuta o professor. Que problema de convivência ocorre?", options:["Indisciplina, incivilidade e transgressão","Bullying/Cyberbullying e Violência","Violência, Transgressão e Bullying","Bullying, Indisciplina e Violência"], answer:0},
+      {question:"Meninas agridem Ana Beatriz com palavras, seguram ela e cortam seu cabelo.", options:["Incivilidade","Violência","Transgressão","Bullying"], answer:3},
+      {question:"Alunos não leram o texto solicitado e ficaram rindo e provocando colegas durante a aula.", options:["Indisciplina","Incivilidade","Violência","Transgressão"], answer:0},
+      {question:"Alunas criam página no Instagram com memes ridicularizando colega.", options:["Indisciplina","Incivilidade","Violência","Cyberbullying"], answer:3},
+      {question:"Aluno vai frequentemente à escola com camiseta de time, mesmo sabendo que não faz parte do uniforme.", options:["Incivilidade","Violência","Transgressão","Bullying"], answer:2},
+      {question:"Professora dá bom dia na sala dos professores e ninguém responde.", options:["Indisciplina","Incivilidade","Violência","Cyberbullying"], answer:1},
+      {question:"A convivência escolar acontece quando alunos, professores e funcionários:", options:["Ficam sempre separados","Vivem juntos respeitando e colaborando","Apenas estudam sem conversar","Ignoram as regras"], answer:1},
+      {question:"Qual atitude contribui para uma boa convivência na escola?", options:["Respeitar colegas e professores","Fazer brincadeiras ofensivas","Gritar durante a aula","Desrespeitar regras"], answer:0},
+      {question:"Quando um aluno agride fisicamente outro colega, isso é:", options:["Indisciplina","Violência","Amizade","Cooperação"], answer:1},
+      {question:"Fazer brincadeiras repetidas que humilham um colega caracteriza:", options:["Bullying","Cooperação","Amizade","Respeito"], answer:0},
+      {question:"Seguir as regras da escola é importante porque:", options:["Mantém organização e respeito","Deixa a escola mais difícil","Não tem importância","Serve apenas aos professores"], answer:0},
+      {question:"Chamar colegas por apelidos ofensivos é um exemplo de:", options:["Respeito","Boa convivência","Incivilidade","Cooperação"], answer:2},
+      {question:"Quando um aluno ajuda outro colega com dificuldade, demonstra:", options:["Egoísmo","Solidariedade","Indisciplina","Desrespeito"], answer:1},
+      {question:"Uma escola com boa convivência é aquela em que:", options:["Existem brigas todos os dias","As pessoas se respeitam e dialogam","Ninguém segue regras","Alunos não participam"], answer:1},
+      {question:"Alunos conversam alto e mexem no celular durante a explicação do professor.", options:["Violência","Indisciplina","Bullying","Incivilidade"], answer:1},
+      {question:"Alguns estudantes respondem com ironia ao bom dia da professora.", options:["Incivilidade","Violência","Transgressão","Bullying"], answer:0},
+      {question:"Dois alunos discutem e trocam empurrões e socos.", options:["Indisciplina","Incivilidade","Violência","Transgressão"], answer:2},
+      {question:"Aluno sai da sala sem autorização e vai para o pátio.", options:["Bullying","Transgressão","Violência","Incivilidade"], answer:1},
+      {question:"Grupo cria perfil para postar mensagens ofensivas sobre colega.", options:["Indisciplina","Incivilidade","Violência","Bullying/Cyberbullying"], answer:3},
+      {question:"Aluno chama colega por apelidos ofensivos todos os dias.", options:["Bullying","Transgressão","Indisciplina","Incivilidade"], answer:0}
+    ];
+
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const nextBtn = document.getElementById("next-btn");
+    const progressBar = document.getElementById("progress-bar");
+
+    const quizBox = document.getElementById("quiz-box");
+    const resultBox = document.getElementById("result-box");
+
+    const scoreEl = document.getElementById("score");
+    const totalEl = document.getElementById("total");
+
+    const restartBtn = document.getElementById("restart-btn");
+
+    const questionCounterEl = document.getElementById("question-counter");
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    totalEl.textContent = questions.length;
+
+    function loadQuestion() {
+
+      const q = questions[currentQuestion];
+
+      questionEl.textContent = q.question;
+
+      optionsEl.innerHTML = "";
+
+      q.options.forEach((opt, i) => {
+
+        const li = document.createElement("li");
+
+        li.textContent = opt;
+
+        li.classList.add("option");
+
+        li.addEventListener("click", () => selectOption(i));
+
+        optionsEl.appendChild(li);
+
+      });
+
+      nextBtn.style.display = "none";
+
+      updateProgress();
+
+      questionCounterEl.textContent =
+        `Questão ${currentQuestion + 1} de ${questions.length}`;
+
+    }
+
+    function selectOption(index) {
+
+      const q = questions[currentQuestion];
+
+      const allOptions = document.querySelectorAll(".option");
+
+      allOptions.forEach((opt, i) => {
+
+        if (i === q.answer) opt.classList.add("correct");
+
+        if (i === index && i !== q.answer) opt.classList.add("wrong");
+
+        opt.style.pointerEvents = "none";
+
+      });
+
+      if (index === q.answer) score++;
+
+      nextBtn.style.display = "block";
+
+    }
+
+    nextBtn.addEventListener("click", () => {
+
+      currentQuestion++;
+
+      if (currentQuestion < questions.length) {
+
+        loadQuestion();
+
+      } else {
+
+        showResult();
+
+      }
+
+    });
+
+    function updateProgress() {
+
+      const pct = ((currentQuestion) / questions.length) * 100;
+
+      progressBar.style.width = pct + "%";
+
+    }
+
+    function showResult() {
+
+      quizBox.classList.add("hidden");
+
+      resultBox.classList.remove("hidden");
+
+      scoreEl.textContent = score;
+
+      const percent = Math.round((score / questions.length) * 100);
+
+      const resultBar = document.getElementById("result-bar");
+
+      const resultPercent = document.getElementById("result-percent");
+
+      const resultMessage = document.getElementById("result-message");
+
+      resultBar.style.width = percent + "%";
+
+      resultPercent.textContent = percent + "% de aproveitamento";
+
+      let msg = "";
+
+      if (percent >= 90) {
+
+        msg = "🏆 Excelente! Você domina o conteúdo!";
+        resultBar.style.background = "#16a34a";
+
+      }
+
+      else if (percent >= 70) {
+
+        msg = "👏 Muito bom! Continue assim!";
+        resultBar.style.background = "#22c55e";
+
+      }
+
+      else if (percent >= 50) {
+
+        msg = "🙂 Resultado razoável. Dá para melhorar!";
+        resultBar.style.background = "#f59e0b";
+
+      }
+
+      else {
+
+        msg = "📚 Você precisa revisar o conteúdo.";
+        resultBar.style.background = "#dc2626";
+
+      }
+
+      resultMessage.textContent = msg;
+
+      progressBar.style.width = "100%";
+
+    }
+
+    restartBtn.addEventListener("click", () => {
+
+      score = 0;
+
+      currentQuestion = 0;
+
+      resultBox.classList.add("hidden");
+
+      quizBox.classList.remove("hidden");
+
+      loadQuestion();
+
+    });
+
+    loadQuestion();
+
+  </script>
+</body>
+</html>
