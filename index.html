@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Convivência Escolar - Gre Recife Norte - Prof Valdeck Francisco</title>
+  <title>Quiz de Matemática 1º ano - Prof Valdeck Francisco</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -68,45 +68,210 @@
 
     </div>
 
-
-    <!-- <footer>
-      Professor Valdeck Francisco — Material Didático
-    </footer> -->
-
   </div>
 
   <script>
     const questions = [
-      {question:"Atitudes que atrapalham o andamento da aula, como conversar excessivamente ou não cumprir orientações do professor. Significa um ato de:", options:["Violência","Indisciplina","Bullying","Transgressão"], answer:1},
-      {question:"Agressões físicas ou psicológicas que causam dano ou sofrimento a outra pessoa. Significa um ato de:", options:["Indisciplina","Incivilidade","Violência","Transgressão"], answer:2},
-      {question:"Falta de respeito ou atitudes grosseiras que ferem a boa convivência entre as pessoas. Significa um ato de:", options:["Indisciplina","Incivilidade","Violência","Transgressão"], answer:1},
-      {question:"Ato de desrespeitar regras ou normas estabelecidas pela escola. Significa um ato de:", options:["Incivilidade","Violência","Transgressão","Bullying/Cyberbullying"], answer:2},
-      {question:"Comportamentos repetitivos de humilhação ou intimidação, podendo ocorrer também nas redes sociais. Significa um ato de:", options:["Indisciplina","Violência","Transgressão","Bullying/Cyberbullying"], answer:3},
-      {question:"Durante a explicação do professor, alguns alunos conversam alto, mexem no celular e não realizam as atividades solicitadas.", options:["Violência","Indisciplina","Bullying","Transgressão"], answer:1},
-      {question:"No intervalo, um aluno chama o colega por apelidos desagradáveis e faz comentários desrespeitosos na frente de outros estudantes.", options:["Incivilidade","Violência","Indisciplina","Transgressão"], answer:0},
-      {question:"Dois alunos começam uma discussão no pátio da escola e acabam trocando empurrões e socos.", options:["Incivilidade","Bullying","Violência","Indisciplina"], answer:2},
-      {question:"Um estudante sai da sala de aula sem autorização do professor e circula pela escola desrespeitando as regras.", options:["Bullying","Transgressão","Violência","Incivilidade"], answer:1},
-      {question:"Um grupo cria um perfil em rede social para publicar mensagens ridicularizando um colega.", options:["Incivilidade","Indisciplina","Bullying/Cyberbullying","Transgressão"], answer:2},
-      {question:"Sala com muito ruído, alunos em pé e gritando, ninguém escuta o professor. Que problema de convivência ocorre?", options:["Indisciplina, incivilidade e transgressão","Bullying/Cyberbullying e Violência","Violência, Transgressão e Bullying","Bullying, Indisciplina e Violência"], answer:0},
-      {question:"Meninas agridem Ana Beatriz com palavras, seguram ela e cortam seu cabelo.", options:["Incivilidade","Violência","Transgressão","Bullying"], answer:3},
-      {question:"Alunos não leram o texto solicitado e ficaram rindo e provocando colegas durante a aula.", options:["Indisciplina","Incivilidade","Violência","Transgressão"], answer:0},
-      {question:"Alunas criam página no Instagram com memes ridicularizando colega.", options:["Indisciplina","Incivilidade","Violência","Cyberbullying"], answer:3},
-      {question:"Aluno vai frequentemente à escola com camiseta de time, mesmo sabendo que não faz parte do uniforme.", options:["Incivilidade","Violência","Transgressão","Bullying"], answer:2},
-      {question:"Professora dá bom dia na sala dos professores e ninguém responde.", options:["Indisciplina","Incivilidade","Violência","Cyberbullying"], answer:1},
-      {question:"A convivência escolar acontece quando alunos, professores e funcionários:", options:["Ficam sempre separados","Vivem juntos respeitando e colaborando","Apenas estudam sem conversar","Ignoram as regras"], answer:1},
-      {question:"Qual atitude contribui para uma boa convivência na escola?", options:["Respeitar colegas e professores","Fazer brincadeiras ofensivas","Gritar durante a aula","Desrespeitar regras"], answer:0},
-      {question:"Quando um aluno agride fisicamente outro colega, isso é:", options:["Indisciplina","Violência","Amizade","Cooperação"], answer:1},
-      {question:"Fazer brincadeiras repetidas que humilham um colega caracteriza:", options:["Bullying","Cooperação","Amizade","Respeito"], answer:0},
-      {question:"Seguir as regras da escola é importante porque:", options:["Mantém organização e respeito","Deixa a escola mais difícil","Não tem importância","Serve apenas aos professores"], answer:0},
-      {question:"Chamar colegas por apelidos ofensivos é um exemplo de:", options:["Respeito","Boa convivência","Incivilidade","Cooperação"], answer:2},
-      {question:"Quando um aluno ajuda outro colega com dificuldade, demonstra:", options:["Egoísmo","Solidariedade","Indisciplina","Desrespeito"], answer:1},
-      {question:"Uma escola com boa convivência é aquela em que:", options:["Existem brigas todos os dias","As pessoas se respeitam e dialogam","Ninguém segue regras","Alunos não participam"], answer:1},
-      {question:"Alunos conversam alto e mexem no celular durante a explicação do professor.", options:["Violência","Indisciplina","Bullying","Incivilidade"], answer:1},
-      {question:"Alguns estudantes respondem com ironia ao bom dia da professora.", options:["Incivilidade","Violência","Transgressão","Bullying"], answer:0},
-      {question:"Dois alunos discutem e trocam empurrões e socos.", options:["Indisciplina","Incivilidade","Violência","Transgressão"], answer:2},
-      {question:"Aluno sai da sala sem autorização e vai para o pátio.", options:["Bullying","Transgressão","Violência","Incivilidade"], answer:1},
-      {question:"Grupo cria perfil para postar mensagens ofensivas sobre colega.", options:["Indisciplina","Incivilidade","Violência","Bullying/Cyberbullying"], answer:3},
-      {question:"Aluno chama colega por apelidos ofensivos todos os dias.", options:["Bullying","Transgressão","Indisciplina","Incivilidade"], answer:0}
+      {
+        question: `01. A distância média entre a Terra e o Sol é de aproximadamente 149.600.000 km. Como esse valor é expresso em notação científica?`,
+        options: ["14,96 x 10⁷ km", "1,496 x 10⁸ km", "0,1496 x 10⁹ km", "1,496 x 10⁷ km"],
+        answer: 1
+      },
+      {
+        question: `02. O tamanho de um glóbulo vermelho é de cerca de 0,000007 metros. Em notação científica, esse valor é:`,
+        options: ["7 x 10⁻⁶ m", "7 x 10⁻⁵ m", "70 x 10⁻⁷ m", "0,7 x 10⁻⁵ m"],
+        answer: 0
+      },
+      {
+        question: `03. Um investidor percebeu que seu capital dobra a cada mês. Se ele começou com R$ 2³, quanto terá após 4 meses (multiplicando por 2⁴)?`,
+        options: ["2⁷", "2¹²", "4⁷", "2⁻¹"],
+        answer: 0
+      },
+      {
+        question: `04. O valor da expressão 5⁻² representa uma fração de um terreno. Que fração é essa?`,
+        options: ["-25", "1/10", "1/25", "2/5"],
+        answer: 2
+      },
+      {
+        question: `05. Simplifique: (10⁵ × 10²) ÷ 10³`,
+        options: ["10¹⁰", "10⁴", "10⁷", "10⁰"],
+        answer: 1
+      },
+      {
+        question: `06. Ao calcular a área de um quadrado de lado x³, temos (x³)². Forma simplificada?`,
+        options: ["x⁵", "x⁶", "x⁹", "2x³"],
+        answer: 1
+      },
+      {
+        question: `07. Em um mapa de constelações, as estrelas são representadas por:`,
+        options: ["Retas", "Planos", "Pontos", "Segmentos"],
+        answer: 2
+      },
+      {
+        question: `08. A superfície de uma mesa nivelada representa:`,
+        options: ["Reta", "Plano", "Ponto", "Ângulo"],
+        answer: 1
+      },
+      {
+        question: `09. C = 50 + 2x. Se C = 150, quantos km foram percorridos?`,
+        options: ["50 km", "100 km", "200 km", "75 km"],
+        answer: 0
+      },
+      {
+        question: `10. Resolva: 3x - 12 = 18`,
+        options: ["6", "10", "15", "30"],
+        answer: 1
+      },
+      {
+        question: `11. Ângulo complementar de 35°:`,
+        options: ["55°", "145°", "90°", "180°"],
+        answer: 0
+      },
+      {
+        question: `12. Ângulo suplementar de 120°:`,
+        options: ["60°", "90°", "30°", "180°"],
+        answer: 0
+      },
+      {
+        question: `13. Triângulo isósceles (ângulo topo 40°):`,
+        options: ["40°", "70°", "140°", "90°"],
+        answer: 1
+      },
+      {
+        question: `14. Triângulo com 90° e 30°: terceiro ângulo?`,
+        options: ["30°", "60°", "90°", "180°"],
+        answer: 1
+      },
+      {
+        question: `15. Soma dos ângulos internos de um pentágono:`,
+        options: ["360°", "540°", "720°", "180°"],
+        answer: 1
+      },
+      {
+        question: `16. Ângulo alterno interno de 50°: correspondente?`,
+        options: ["130°", "50°", "90°", "180°"],
+        answer: 1
+      },
+      {
+        question: `17. 1,5 x 10⁸ em km:`,
+        options: ["1500 km", "150.000.000 km", "150.000 km", "150 km"],
+        answer: 1
+      },
+      {
+        question: `18. 0,000004 em notação científica:`,
+        options: ["4 x 10⁻³", "4 x 10⁻⁴", "4 x 10⁻⁵", "4 x 10⁻⁶"],
+        answer: 3
+      },
+      {
+        question: `19. 2⁵ operações:`,
+        options: ["10", "25", "32", "64"],
+        answer: 2
+      },
+      {
+        question: `20. 10⁻³ =`,
+        options: ["0,1", "0,01", "0,001", "0,0001"],
+        answer: 2
+      },
+      {
+        question: `21. 2³ × 2⁴ =`,
+        options: ["2⁷", "2¹²", "4⁷", "8⁴"],
+        answer: 0
+      },
+      {
+        question: `22. 5⁶ ÷ 5² =`,
+        options: ["5⁴", "5³", "5⁸", "5¹²"],
+        answer: 0
+      },
+      {
+        question: `23. Superfície na geometria é:`,
+        options: ["Reta", "Ângulo", "Segmento", "Plano"],
+        answer: 3
+      },
+      {
+        question: `24. Dois pontos determinam:`,
+        options: ["Plano", "Ângulo", "Reta", "Triângulo"],
+        answer: 2
+      },
+      {
+        question: `25. Área do quadrado lado 6:`,
+        options: ["12", "24", "36", "48"],
+        answer: 2
+      },
+      {
+        question: `26. Velocidade (120 km em 2h):`,
+        options: ["40", "50", "60", "70"],
+        answer: 2
+      },
+      {
+        question: `27. x + 5 = 15`,
+        options: ["5", "8", "10", "12"],
+        answer: 2
+      },
+      {
+        question: `28. 2x = 18`,
+        options: ["6", "7", "8", "9"],
+        answer: 3
+      },
+      {
+        question: `29. Ângulos complementares somam:`,
+        options: ["90°", "120°", "180°", "360°"],
+        answer: 0
+      },
+      {
+        question: `30. Suplementar de 110°:`,
+        options: ["70°", "60°", "80°", "50°"],
+        answer: 0
+      },
+      {
+        question: `31. Soma dos ângulos de um triângulo:`,
+        options: ["90°", "180°", "270°", "360°"],
+        answer: 1
+      },
+      {
+        question: `32. 50° e 60° → terceiro ângulo:`,
+        options: ["60°", "70°", "80°", "90°"],
+        answer: 1
+      },
+      {
+        question: `33. Quadrilátero soma:`,
+        options: ["180°", "270°", "360°", "540°"],
+        answer: 2
+      },
+      {
+        question: `34. Heptágono soma:`,
+        options: ["360°", "540°", "180°", "900°"],
+        answer: 3
+      },
+      {
+        question: `35. Retas com 90°:`,
+        options: ["Paralelas", "Opostas", "Concorrentes", "Perpendiculares"],
+        answer: 3
+      },
+      {
+        question: `36. Alternos internos:`,
+        options: ["Diferentes", "Opostos", "Iguais", "Complementares"],
+        answer: 2
+      },
+      {
+        question: `37. 3.000.000.000 em notação científica:`,
+        options: ["3 x 10⁶", "3 x 10⁷", "3 x 10⁹", "3 x 10¹⁰"],
+        answer: 2
+      },
+      {
+        question: `38. 3² × 3³ =`,
+        options: ["3⁵", "3⁶", "9⁵", "6⁵"],
+        answer: 0
+      },
+      {
+        question: `39. x + 8 = 20`,
+        options: ["10", "12", "14", "16"],
+        answer: 1
+      },
+      {
+        question: `40. Complementar de 35°:`,
+        options: ["45°", "50°", "55°", "65°"],
+        answer: 2
+      }
     ];
 
     const questionEl = document.getElementById("question");
@@ -280,5 +445,4 @@
 
   </script>
 </body>
-
 </html>
